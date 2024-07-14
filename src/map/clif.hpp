@@ -487,8 +487,32 @@ enum useskill_fail_cause : uint8_t
 	USESKILL_FAIL_THERE_ARE_NPC_AROUND = 83,
 	USESKILL_FAIL_NEED_MORE_BULLET = 84,
 	USESKILL_FAIL_COINS = 85,
-	// 86-99 unknown
-	USESKILL_FAIL_AP_INSUFFICIENT = 100,
+	//#86 Unknown Usage MSG: Do you agree?
+	USESKILL_FAIL_MAP = 87,
+	USESKILL_FAIL_NEED_SUMMON_SP,
+	USESKILL_FAIL_SAME_VEND,
+	USESKILL_FAIL_NEED_BULLETS,
+	USESKILL_FAIL_NEED_ARROWS,
+	USESKILL_FAIL_NEED_PARTY,
+	USESKILL_FAIL_NEED_PARTY_LEADER,
+	USESKILL_FAIL_NEED_PARTNER_SP,
+	USESKILL_FAIL_NEED_WEAPON,
+	USESKILL_FAIL_NEED_ENERGY_SPHERE,
+	USESKILL_FAIL_NEED_WEAPON_BLOCKING,
+	USESKILL_FAIL_MAX_TRAPS,
+	USESKILL_FAIL_NEED_MAGIC_SPELLBOOK,
+	USESKILL_FAIL_AP_INSUFFICIENT,
+	USESKILL_FAIL_NEED_SERVANT_WEAPON,
+	USESKILL_FAIL_NEED_TWINKLING_GALAXY,
+	USESKILL_FAIL_NEED_SOUL_ENGERY,
+	USESKILL_FAIL_NEED_AMULET,
+	USESKILL_FAIL_NEED_GATLING_SHOTGUT,
+	USESKILL_FAIL_NEED_RIFLE_REVOLVER,
+	USESKILL_FAIL_NEED_GLAUNCHER_RIFLE,
+	USESKILL_FAIL_NEED_GATLING_REVOLVER,
+	USESKILL_FAIL_NEED_SHOTGUN_GLAUNCHER,
+	USESKILL_FAIL_NEED_SHIELD,
+	USESKILL_FAIL_TARGET_SHADOW_SPACE,
 	USESKILL_FAIL_MAX
 };
 
@@ -504,9 +528,42 @@ enum clif_equipitemack_flag : uint8_t {
 #endif
 };
 
-//! NOTE: These values below need client version validation
-// These values correspond to the msgstringtable line number minus 1
 enum clif_messages : uint16_t {
+	// These values correspond to the msgstringtable line number minus 1
+	//! NOTE: These values below need client version validation
+	ITEM_CANT_OBTAIN_WEIGHT = 0x34, /* You cannot carry more items because you are overweight. */
+	ITEM_NOUSE_SITTING = 0x297,
+	ITEM_PARTY_MEMBER_NOT_SUMMONED = 0x4c5, ///< "The party member was not summoned because you are not the party leader."
+	ITEM_PARTY_NO_MEMBER_IN_MAP = 0x4c6, ///< "There is no party member to summon in the current map."
+	MERC_MSG_BASE = 0x4f2,
+	SKILL_CANT_USE_AREA = 0x536,
+	ITEM_CANT_USE_AREA = 0x537,
+	VIEW_EQUIP_FAIL = 0x54d,
+	ITEM_NEED_MADOGEAR = 0x59b,
+	ITEM_NEED_CART = 0x5ef,
+	RUNE_CANT_CREATE = 0x61b,
+	ITEM_CANT_COMBINE = 0x623,
+	INVENTORY_SPACE_FULL = 0x625,
+	ITEM_PRODUCE_SUCCESS = 0x627,
+	ITEM_PRODUCE_FAIL = 0x628,
+	ITEM_UNIDENTIFIED = 0x62d,
+	ITEM_NEED_BOW = 0x69b,
+	ITEM_REUSE_LIMIT = 0x746,
+	WORK_IN_PROGRESS = 0x783,
+	NEED_REINS_OF_MOUNT = 0x78c,
+	PARTY_MASTER_CHANGE_SAME_MAP = 0x82e, ///< "It is only possible to change the party leader while on the same map."
+	MERGE_ITEM_NOT_AVAILABLE = 0x887,
+	ITEM_BULLET_EQUIP_FAIL = 0x9bd,
+	SKILL_NEED_GATLING = 0x9fa,
+	SKILL_NEED_SHOTGUN = 0x9fb,
+	SKILL_NEED_RIFLE = 0x9fc,
+	SKILL_NEED_REVOLVER = 0x9fd,
+	SKILL_NEED_HOLY_BULLET = 0x9fe,
+	SKILL_NEED_GRENADE = 0xa01,
+	SKILL_FAIL_P_ALT_HEAT_B_MADNESSC = 0xa02,
+	GUILD_MASTER_WOE = 0xb93, /// <"Currently in WoE hours, unable to delegate Guild leader"
+	GUILD_MASTER_DELAY = 0xb94, /// <"You have to wait for one day before delegating a new Guild leader"
+	MSG_ATTENDANCE_DISABLED = 0xd92,
 
 	// You cannot carry more items because you are overweight.
 	MSI_CANT_GET_ITEM_BECAUSE_WEIGHT = 52,
