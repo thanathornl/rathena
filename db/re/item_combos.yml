@@ -13239,6 +13239,9 @@ Body:
       - Combo:
           - Comp_Sunglasses_    # 410299
           - Comp_Mob_Scarf    # 420089
+      - Combo:
+          - Professor_MiniGlass_    # 410067
+          - Mob_Scarf    # 28502
     Script: |
       .@a = (readparam(bStr)+readparam(bLuk))/80;
       .@b = (readparam(bAgi)+readparam(bVit))/80;
@@ -52207,3 +52210,31 @@ Body:
       bonus bShortAtkRate,7;
       bonus bLongAtkRate,7;
       bonus2 bMagicAtkEle,Ele_All,7;
+  - Combos:
+      - Combo:
+          - Sixth_Sense_Ring   # 490038
+          - Release_Of_Magic    # 29371
+    Script: |
+      bonus2 bIgnoreMdefRaceRate,RC_All,100; bonus bDelayrate,-30;
+  - Combos:
+      - Combo:
+          - Kyel_hyre_Ulti_TW   # 480341
+          - Kiel_Card    # 4403
+    Script: |
+      bonus bDelayrate,15;
+      bonus2 bAddClass,Class_Boss,20;
+  - Combos:
+      - Combo:
+          - Kyel_hyre_Ulti_TW   # 480341
+          - Sealed_Kiel_Card    # 4480
+    Script: |
+      bonus bDelayrate,8;
+      bonus2 bAddClass,Class_Boss,12;
+  - Combos:
+      - Combo:
+          - Kyel_hyre_Ulti_TW   # 480341
+          - Kiel_Card    # 4403
+          - Sealed_Kiel_Card    # 4480 
+    Script: |
+      bonus bDelayrate,-30;
+      bonus bPAtk,15;

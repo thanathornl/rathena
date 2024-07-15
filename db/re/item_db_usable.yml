@@ -7007,7 +7007,7 @@ Body:
       NoAuction: true
     Script: |
       skilleffect "AL_BLESSING",0;
-      sc_start SC_BLESSING,240000,10;
+      sc_start SC_BLESSING,24000000,10;
   - Id: 12216
     AegisName: Inc_Agi_10_Scroll
     Name: LV10 Agil Scroll
@@ -7027,7 +7027,7 @@ Body:
     Script: |
       if (Hp>15) {
          skilleffect "AL_INCAGI",0;
-         sc_start SC_INCREASEAGI,240000,10;
+         sc_start SC_INCREASEAGI,24000000,10;
          heal -15,0;
       }
   - Id: 12217
@@ -7049,7 +7049,7 @@ Body:
     Script: |
       if (countitem(523)>0) {
          skilleffect "PR_ASPERSIO",0;
-         sc_start SC_ASPERSIO,180000,5;
+         sc_start SC_ASPERSIO,24000000,5;
          delitem 523,1;
       }
   - Id: 12218
@@ -7069,7 +7069,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      sc_start SC_ASSUMPTIO,100000,5;
+      sc_start SC_ASSUMPTIO,24000000,5;
       skilleffect "HP_ASSUMPTIO",0;
   - Id: 12219
     AegisName: Wind_Walk_10_Scroll
@@ -7089,7 +7089,7 @@ Body:
       NoAuction: true
     Script: |
       skilleffect "SN_WINDWALK",0;
-      sc_start SC_WINDWALK,250000,10;
+      sc_start SC_WINDWALK,24000000,10;
   - Id: 12220
     AegisName: Adrenaline_Scroll
     Name: LV5 Adrenaline Scroll
@@ -7110,7 +7110,7 @@ Body:
       .@type = getiteminfo(getequipid(EQI_HAND_R), ITEMINFO_VIEW);
       if (.@type == W_1HAXE || .@type == W_2HAXE || .@type == W_MACE) {
          skilleffect "BS_ADRENALINE",0;
-         sc_start SC_ADRENALINE,150000,5;
+         sc_start SC_ADRENALINE,24000000,5;
       }
   - Id: 12221
     AegisName: Megaphone_
@@ -11567,7 +11567,7 @@ Body:
     Type: Usable
     Weight: 10
     Delay:
-      Duration: 180000
+      Duration: 180
       Status: Reuse_Limit_B
     Trade:
       NoDrop: true
@@ -11579,7 +11579,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_HASTEUP;
-      sc_start SC_MAGICCANDY,60000,0;
+      sc_start SC_MAGICCANDY,6000000,0;
   - Id: 12597
     AegisName: Opor_Ayam
     Name: Opor Ayam
@@ -12622,7 +12622,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      sc_start SC_ATTHASTE_CASH,900000,3;
+      sc_start SC_ATTHASTE_CASH,9000000,3;
   - Id: 12685
     AegisName: Gryphon_Egg_Scroll
     Name: Gryphon Egg Scroll
@@ -13740,7 +13740,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_POTION_BERSERK;
-      sc_start SC_2011RWC_SCROLL,600000,0;
+      sc_start SC_2011RWC_SCROLL,6000000,0;
   - Id: 12797
     AegisName: Wish_Maiden_Scroll
     Name: Wish Maiden Scroll
@@ -13859,7 +13859,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_WIND;
-      sc_start SC_MYSTICPOWDER,300000,0;
+      sc_start SC_MYSTICPOWDER,3000000,0;
   - Id: 12806
     AegisName: Scaraba_Scroll
     Name: Scaraba Scroll
@@ -14231,7 +14231,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_HEAL3;
-      sc_start2 SC_M_LIFEPOTION,600000,-4,3;
+      sc_start2 SC_M_LIFEPOTION,60000000,-4,3;
   - Id: 12833
     AegisName: Union_Of_Tribe_
     Name: Union of Organization
@@ -14637,13 +14637,13 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_BASH3D;
-      sc_start SC_ALMIGHTY,1800000,10;
-      sc_start SC_FOOD_STR_CASH,1800000,10;
-      sc_start SC_FOOD_AGI_CASH,1800000,10;
-      sc_start SC_FOOD_INT_CASH,1800000,10;
-      sc_start SC_FOOD_DEX_CASH,1800000,10;
-      sc_start SC_FOOD_LUK_CASH,1800000,10;
-      sc_start SC_FOOD_VIT_CASH,1800000,10;
+      sc_start SC_ALMIGHTY,18000000,10;
+      sc_start SC_FOOD_STR_CASH,18000000,10;
+      sc_start SC_FOOD_AGI_CASH,18000000,10;
+      sc_start SC_FOOD_INT_CASH,18000000,10;
+      sc_start SC_FOOD_DEX_CASH,18000000,10;
+      sc_start SC_FOOD_LUK_CASH,18000000,10;
+      sc_start SC_FOOD_VIT_CASH,18000000,10;
   - Id: 12884
     AegisName: Infinite_Center_Potion
     Name: Infinite Concentration Potion
@@ -18363,7 +18363,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      getitem 7621,20;
+      getitem 7621,50;
   - Id: 13602
     AegisName: Kafra_Card_Box30
     Name: Kafra Card 30 Box
@@ -34662,7 +34662,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_HEAL3;
-      sc_start2 SC_S_LIFEPOTION,600000,-5,5;
+      sc_start2 SC_S_LIFEPOTION,60000000,-5,5;
   - Id: 14535
     AegisName: Med_Life_Potion
     Name: Medium Life Potion
@@ -34678,7 +34678,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_HEAL3;
-      sc_start2 SC_L_LIFEPOTION,600000,-7,4;
+      sc_start2 SC_L_LIFEPOTION,60000000,-7,4;
   - Id: 14536
     AegisName: Abrasive
     Name: Abrasive
@@ -34710,7 +34710,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_LIGHTSPHERE;
-      sc_start SC_INCHEALRATE,1800000,20;
+      sc_start SC_INCHEALRATE,180000000,20;
   - Id: 14538
     AegisName: Glass_Of_Illusion
     Name: Glass of Illusion
@@ -35484,7 +35484,7 @@ Body:
     Type: Usable
     Weight: 10
     Delay:
-      Duration: 180000
+      Duration: 180
       Status: Reuse_Limit_B
     Trade:
       NoDrop: true
@@ -35496,7 +35496,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_HASTEUP;
-      sc_start SC_SPARKCANDY,60000,0;
+      sc_start SC_SPARKCANDY,6000000,0;
   - Id: 14587
     AegisName: Repair_Scroll_
     Name: Equipment Repair Spell Book
@@ -35736,10 +35736,10 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      sc_start SC_FLEEFOOD,300000,30;
-      sc_start SC_HITFOOD,300000,30;
-      sc_start SC_ATKPOTION,300000,20;
-      sc_start SC_MATKPOTION,300000,20;
+      sc_start SC_FLEEFOOD,30000000,30;
+      sc_start SC_HITFOOD,30000000,30;
+      sc_start SC_ATKPOTION,30000000,20;
+      sc_start SC_MATKPOTION,30000000,20;
   - Id: 14602
     AegisName: TaogunkaS
     Name: Tao Gunka Scroll
@@ -60585,7 +60585,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_LIGHTSPHERE;
-      sc_start SC_INCHEALRATE,1800000,20;
+      sc_start SC_INCHEALRATE,180000000,20;
   - Id: 23049
     AegisName: Comp_Spark_Candy
     Name: "[Not For Sale] Sparkling Candy"
@@ -63599,7 +63599,7 @@ Body:
       NoAuction: true
     Script: |
       specialeffect2 EF_POTION_BERSERK;
-      sc_start SC_INFINITY_DRINK,1800000,0;
+      sc_start SC_INFINITY_DRINK,180000000,0;
   - Id: 23484
     AegisName: Firstaid_Box_5
     Name: First aid Box (5)
@@ -76213,7 +76213,7 @@ Body:
       NoMail: true
       NoAuction: true
     Script: |
-      sc_start SC_ITEMBOOST,1800000,100;
+      sc_start SC_ITEMBOOST,1800000,200;
   - Id: 101948
     AegisName: A_Bubble_Gum_Box10
     Name: "[Achievement] 10 boxes of bubble gum"    # !todo check english name
@@ -81489,3 +81489,137 @@ Body:
       NoAuction: true
     Script: |
       itemheal 2000,0; /* average value */
+  - Id: 1230001
+    AegisName: Orangy_Potion
+    Name: Orangy Potion
+    Type: Healing
+    Buy: 50
+    Weight: 100
+    Flags:
+      NoConsume: true
+    Script: |
+      itemheal rand(105,145),0;
+      sc_start SC_ALMIGHTY,3600000,99;
+      sc_start SC_FOOD_STR_CASH,3600000,99;
+      sc_start SC_FOOD_AGI_CASH,3600000,99;
+      sc_start SC_FOOD_INT_CASH,3600000,99;
+      sc_start SC_FOOD_DEX_CASH,3600000,99;
+      sc_start SC_FOOD_LUK_CASH,3600000,99;
+      sc_start SC_FOOD_VIT_CASH,3600000,99;
+      sc_start SC_SPEEDUP0,600000,50;
+      specialeffect2 EF_HEAL4;
+      specialeffect2 EF_BASH3D;
+      specialeffect2 EF_GUMGANG2;
+  - Id: 1230002
+    AegisName: Mixed_Gummy_Bears
+    Name: Mixed Gummy Bear
+    Type: Healing
+    Buy: 1000000
+    Weight: 5
+    Script: |
+      specialeffect2 EF_POTION_BERSERK;
+      specialeffect2 EF_ICE_CRASH;
+      specialeffect2 EF_MAXPOWER;
+      sc_start SC_SPEEDUP0,3600000,30;
+      sc_start SC_ATKPOTION,3600000,20;
+      sc_start SC_MATKPOTION,3600000,20;
+      sc_start SC_HITFOOD,3600000,40;
+      sc_start SC_FLEEFOOD,3600000,40;
+      sc_start SC_ADD_MATK_DAMAGE,3600000,20;
+      sc_start SC_ADD_ATK_DAMAGE,3600000,20;
+      sc_start SC_ASPDPOTION2,3600000,15;
+      sc_start SC_INCCRI,3600000,35;
+  - Id: 1230003
+    AegisName: Thanathorn_Full_Course
+    Name: Thanathorn Full Course
+    Type: Healing
+    Buy: 1000000
+    Weight: 5
+    Script: |
+      specialeffect2 EF_HEAL4;
+      specialeffect2 EF_BASH3D;
+      sc_start SC_STRFOOD,3600000,35;
+      sc_start SC_AGIFOOD,3600000,35;
+      sc_start SC_VITFOOD,3600000,35;
+      sc_start SC_INTFOOD,3600000,35;
+      sc_start SC_DEXFOOD,3600000,35;
+      sc_start SC_LUKFOOD,3600000,35;
+      sc_start2 SC_L_LIFEPOTION,3600000,-9,3;
+      sc_start2 SC_S_MANAPOTION,3600000,-9,3;
+      sc_start SC_REF_T_POTION,3600000,0;
+  - Id: 1230004
+    AegisName: Super_Chocolate_Drink
+    Name: Super Chocolate Drink
+    Type: Healing
+    Buy: 1000000
+    Weight: 5
+    Script: |
+      specialeffect2 EF_GUARD;
+      specialeffect2 EF_HEAL3;
+      sc_start SC_INCREASE_MAXSP,3600000,15;
+      sc_start SC_SPCOST_RATE,3600000,15;
+      sc_start SC_DEF_RATE,3600000,15;
+      sc_start SC_MDEF_RATE,3600000,15;
+      sc_start2 SC_M_DEFSCROLL,3600000,500,200;
+  - Id: 1230005
+    AegisName: Majestic_Manual
+    Name: Majestic Manual
+    Type: Healing
+    Buy: 1000000
+    Weight: 5
+    Script: |
+      specialeffect2 EF_COIN;
+      specialeffect2 EF_GUMGANG2;
+      sc_start SC_EXPBOOST,3600000,300;
+      sc_start SC_ITEMBOOST,3600000,750;
+      sc_start SC_JEXPBOOST,3600000,300;
+  - Id: 1230006
+    AegisName: God_Messages
+    Name: God Messages
+    Type: Usable
+    Buy: 1000000
+    Weight: 50
+    Script: |
+      specialeffect2 EF_INCAGILITY;
+      specialeffect2 EF_BLESSING;
+      specialeffect2 EF_ANGELUS;
+      specialeffect2 EF_GLORIA;
+      sc_start SC_INCREASEAGI,3600000,10;
+      sc_start SC_ANGELUS,3600000,10;
+      sc_start SC_BLESSING,3600000,10;
+      sc_start SC_MAGNIFICAT,3600000,5;
+      sc_start SC_GLORIA,3600000,5;
+      //sc_start SC_ARGUTUS_VITA,3600000,5;
+      //sc_start SC_ARGUTUS_TELUM,3600000,5;
+      //sc_start SC_PRESENS_ACIES,3600000,5;
+      sc_start SC_RELIGIO,3600000,5;
+      sc_start SC_BENEDICTUM,3600000,5;
+  - Id: 1230007
+    AegisName: Cherry_Blossom_Emblem
+    Name: Cherry Blossom Emblem
+    Type: Usable
+    Buy: 10
+    Sell: 1
+    Weight: 100
+    Flags:
+      NoConsume: true
+    Trade:
+      Override: 100
+      NoDrop: true
+      NoTrade: true
+      TradePartner: true
+      NoSell: true
+      NoCart: true
+      NoGuildStorage: true
+      NoMail: true
+      NoAuction: true
+    Script: |
+      warp "skycity",149,215;
+  - Id: 1230008
+    AegisName: Red_Potion_EX
+    Name: Red Potion_EX
+    Type: Healing
+    Buy: 10
+    Weight: 70
+    Script: |
+      healap 20;

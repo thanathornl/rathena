@@ -40,6 +40,21 @@ Body:
   - ID: 0
     Name: "Storage"
     Table: storage
+  - ID: 1
+    Name: "VIPStorage"
+    Table: storage1
+  - ID: 2
+    Name: "CardStorage"
+    Table: storage2
+  - ID: 3
+    Name: "Storage 3"
+    Table: storage3
+  - ID: 4
+    Name: "Storage 4"
+    Table: storage4   
+  - ID: 5
+    Name: "Storage 5"
+    Table: storage5
 
 Footer:
   Imports:

@@ -1621,7 +1621,6 @@ int64 battle_calc_damage(struct block_list *src,struct block_list *bl,struct Dam
 			return damage; //These skills bypass everything else.
 	}
 
-	status_change* tsc = status_get_sc(bl); //check target status
 
 	// Nothing can reduce the damage, but Safety Wall and Millennium Shield can block it completely.
 	// So can defense sphere's but what the heck is that??? [Rytech]
@@ -3002,10 +3001,9 @@ static bool is_attack_critical(struct Damage* wd, struct block_list *src, struct
 {
 	if (!first_call)
 		return (wd->type == DMG_CRITICAL || wd->type == DMG_MULTI_HIT_CRITICAL);
-
+#ifdef RENEWAL
 	if (skill_id == NPC_CRITICALSLASH || skill_id == LG_PINPOINTATTACK) //Always critical skills
 		return true;
-
 #endif
 
 	status_change *sc = status_get_sc(src);

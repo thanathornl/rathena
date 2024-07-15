@@ -875,7 +875,7 @@ bool skill_isNotOk( uint16 skill_id, map_session_data& sd ){
 
 	if( sd.sc.getSCE(SC_ALL_RIDING) )
 		return true; //You can't use skills while in the new mounts (The client doesn't let you, this is to make cheat-safe)
-	if (sd->sc.getSCE(SC_HANDICAPSTATE_MISFORTUNE) && rand() % 100 < 30) {
+	if (sd.sc.getSCE(SC_HANDICAPSTATE_MISFORTUNE) && rand() % 100 < 30) {
 		clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
 		return true;
 	}
@@ -6168,7 +6168,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 				}
 			}
 			if (sd)
-				clif_skill_fail(sd, skill_id, USESKILL_FAIL_LEVEL, 0);
+				clif_skill_fail(*sd, skill_id, USESKILL_FAIL_LEVEL, 0);
 			return 1;
 		}
 		break;
@@ -6210,7 +6210,7 @@ int skill_castend_damage_id (struct block_list* src, struct block_list *bl, uint
 				unit_setdir(bl,dir);
 				clif_blown(src);
 			} else if (sd) {
-				clif_skill_fail(sd, skill_id, USESKILL_FAIL_TARGET_SHADOW_SPACE, 0);
+				clif_skill_fail(*sd, skill_id, USESKILL_FAIL_TARGET_SHADOW_SPACE, 0);
 				break;
 			}
 		}
@@ -11311,7 +11311,7 @@ int skill_castend_nodamage_id (struct block_list *src, struct block_list *bl, ui
 				break;
 			}
 		}
-		clif_skill_fail(sd, skill_id, USESKILL_FAIL_NEED_WEAPON, 0);
+		clif_skill_fail(*sd, skill_id, USESKILL_FAIL_NEED_WEAPON, 0);
 		break;
 	case SS_ANTENPOU:
 	case SS_KAGENOMAI:
@@ -15364,7 +15364,7 @@ int skill_castend_pos2(struct block_list* src, int x, int y, uint16 skill_id, ui
 		skill_area_temp[1] = 0;
 		skill_mirage_cast(src, NULL,SS_ANTENPOU, skill_lv, x, y, tick, flag);
 		if( map_getcell(src->m, x, y, CELL_CHKLANDPROTECTOR) ) {
-			clif_skill_fail(sd,skill_id,USESKILL_FAIL,0);
+			clif_skill_fail(*sd,skill_id,USESKILL_FAIL,0);
 			return 0;
 		}
 		clif_skill_nodamage(src, src, skill_id, skill_lv, 1);
@@ -15394,7 +15394,7 @@ int skill_castend_pos2(struct block_list* src, int x, int y, uint16 skill_id, ui
 	case SS_REIKETSUHOU:
 		skill_mirage_cast(src, NULL,SS_ANTENPOU, skill_lv, 0, 0, tick,flag);
 		if( map_getcell(src->m, x, y, CELL_CHKLANDPROTECTOR) ) {
-			clif_skill_fail(sd,skill_id,USESKILL_FAIL,0);
+			clif_skill_fail(*sd,skill_id,USESKILL_FAIL,0);
 			return 0;
 		}
 		i = skill_get_splash(skill_id, skill_lv);
@@ -18227,8 +18227,8 @@ bool skill_check_condition_castbegin( map_session_data& sd, uint16 skill_id, uin
 
 	// perform skill-group checks
 	if(skill_id != WM_GREAT_ECHO && inf2[INF2_ISCHORUS]) {
-		if (skill_check_pc_partner(sd, skill_id, &skill_lv, AREA_SIZE, 0) < 1 && !(sc && sc->getSCE(SC_KVASIR_SONATA))) {
-			clif_skill_fail(sd,skill_id,USESKILL_FAIL_LEVEL,0);
+		if (skill_check_pc_partner(&sd, skill_id, &skill_lv, AREA_SIZE, 0) < 1 && !(sc && sc->getSCE(SC_KVASIR_SONATA))) {
+			clif_skill_fail( sd,skill_id,USESKILL_FAIL_LEVEL,0);
 
 			return false;
 		}
@@ -18873,10 +18873,10 @@ bool skill_check_condition_castbegin( map_session_data& sd, uint16 skill_id, uin
 			}
 			break;
 		case SH_TEMPORARY_COMMUNION:
-			if (sd && !pc_checkskill(sd, SH_COMMUNE_WITH_CHUL_HO)
-				  && !pc_checkskill(sd, SH_COMMUNE_WITH_HYUN_ROK)
-				  && !pc_checkskill(sd, SH_COMMUNE_WITH_KI_SUL)) {
-				clif_skill_fail(sd,skill_id,USESKILL_FAIL_CONDITION,0);
+			if (!pc_checkskill(&sd, SH_COMMUNE_WITH_CHUL_HO)
+				&& !pc_checkskill(&sd, SH_COMMUNE_WITH_HYUN_ROK)
+				&& !pc_checkskill(&sd, SH_COMMUNE_WITH_KI_SUL)) {
+				clif_skill_fail(sd, skill_id);
 				return false;
 			}
 			break;
@@ -18906,19 +18906,19 @@ bool skill_check_condition_castbegin( map_session_data& sd, uint16 skill_id, uin
 			break;
 		case RL_P_ALTER:
 			if (sc && (sc->getSCE(SC_HEAT_BARREL) || sc->getSCE(SC_MADNESSCANCEL))){
-				clif_msg_color( sd, SKILL_FAIL_P_ALT_HEAT_B_MADNESSC, color_table[COLOR_RED] );
+				clif_msg(&sd, SKILL_FAIL_P_ALT_HEAT_B_MADNESSC);
 				return false;
 			}
 			break;
 		case RL_HEAT_BARREL:
 			if (sc && (sc->getSCE(SC_P_ALTER) || sc->getSCE(SC_MADNESSCANCEL))){
-				clif_msg_color( sd, SKILL_FAIL_P_ALT_HEAT_B_MADNESSC, color_table[COLOR_RED] );
+				clif_msg(&sd, SKILL_FAIL_P_ALT_HEAT_B_MADNESSC);
 				return false;
 			}
 			break;
 		case GS_MADNESSCANCEL:
 			if (sc && (sc->getSCE(SC_HEAT_BARREL) || sc->getSCE(SC_P_ALTER))){
-				clif_msg_color( sd, SKILL_FAIL_P_ALT_HEAT_B_MADNESSC, color_table[COLOR_RED] );
+				clif_msg(&sd, SKILL_FAIL_P_ALT_HEAT_B_MADNESSC);
 				return false;
 			}
 			break;
@@ -18951,7 +18951,7 @@ bool skill_check_condition_castbegin( map_session_data& sd, uint16 skill_id, uin
 			}
 			break;
 		case ST_SHIELD:
-			if(sd->status.shield <= 0) {
+			if(sd.status.shield <= 0) {
 				//TODO: will this change from USESKILL_FAIL_LEVEL cause problems in older clients? [Muh]
 				clif_skill_fail(sd,skill_id,USESKILL_FAIL_NEED_SHIELD,0);
 				return false;
@@ -19139,19 +19139,19 @@ bool skill_check_condition_castbegin( map_session_data& sd, uint16 skill_id, uin
 						clif_skill_fail(sd, skill_id, USESKILL_FAIL_NEED_SHOTGUN_GLAUNCHER, 0);
 						break;
 					case (1 << W_REVOLVER):
-						clif_msg(sd, SKILL_NEED_REVOLVER);
+						clif_msg(&sd, SKILL_NEED_REVOLVER);
 						break;
 					case (1 << W_RIFLE):
-						clif_msg(sd, SKILL_NEED_RIFLE);
+						clif_msg(&sd, SKILL_NEED_RIFLE);
 						break;
 					case (1 << W_GATLING):
-						clif_msg(sd, SKILL_NEED_GATLING);
+						clif_msg(&sd, SKILL_NEED_GATLING);
 						break;
 					case (1 << W_SHOTGUN):
-						clif_msg(sd, SKILL_NEED_SHOTGUN);
+						clif_msg(&sd, SKILL_NEED_SHOTGUN);
 						break;
 					case (1 << W_GRENADE):
-						clif_msg(sd, SKILL_NEED_GRENADE);
+						clif_msg(&sd, SKILL_NEED_GRENADE);
 						break;
 					default:
 						clif_skill_fail( sd, skill_id, USESKILL_FAIL_THIS_WEAPON );
@@ -19192,7 +19192,7 @@ bool skill_check_condition_castbegin( map_session_data& sd, uint16 skill_id, uin
 			case SP_SOULEXPLOSION:
 			case SP_KAUTE:
 			case SOA_EXORCISM_OF_MALICIOUS_SOUL:
-				if (sd->soulball < require.spiritball) {
+				if (sd.soulball < require.spiritball) {
 					clif_skill_fail(sd, skill_id, USESKILL_FAIL_SPIRITS, 0);
 					return false;
 				}
