@@ -1,0 +1,15 @@
+skycity,143,225,6	script	Sky Platinum Skill NPC	10529,{
+	mes "[Platinum Skill NPC]";
+	mes "I can give you the special skills available to your job.";
+	mes "Would you like these skills now?";
+	next;
+	if (select("Yes Please:No") == 2) {
+		mes "[Platinum Skill NPC]";
+		mes "Have a nice day... >.>";
+		close;
+	}
+	callfunc "F_GetPlatinumSkills";
+	mes "[Platinum Skill NPC]";
+	mes "There you go!";
+	close;
+}

@@ -49,6 +49,7 @@ geffen,115,168,4	duplicate(cashmall_warper)	Cash Sales Guide#geffen	4_M_HUMAN_02
 payon,164,157,4	duplicate(cashmall_warper)	Cash Sales Guide#payon	4_M_HUMAN_02
 lighthalzen,206,144,4	duplicate(cashmall_warper)	Cash Sales Guide#lighthalzen	4_M_HUMAN_02
 rachel,128,144,4	duplicate(cashmall_warper)	Cash Sales Guide#rachel	4_M_HUMAN_02
+skycity,130,205,46	duplicate(cashmall_warper)	Cash Sales Guide#skycity	4_M_HUMAN_02
 
 itemmall,21,45,4	script	Exit Guide#cashmall_exit	4_M_HUMAN_02,{
 	mes "[Guide]";

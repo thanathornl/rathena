@@ -57,9 +57,9 @@ S_Mob:
 	if (.@group != .group)
 		end;
 	if (playerattached()) {
-		if (.count < 1500)
+		if (.count < 150)
 			.count++;
-		if (.count == 1500 && !.boss_spawn && !.cooldown) {
+		if (.count == 150 && !.boss_spawn && !.cooldown) {
 			getunitdata( killedgid, .@data );
 			callsub( S_Boss, (20273 + .swap), .@group, .@data[UMOB_X], .@data[UMOB_Y] );
 		}

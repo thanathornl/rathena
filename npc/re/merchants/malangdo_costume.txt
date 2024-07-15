@@ -789,6 +789,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 		case 31573:	// C_Mecha_Cat_Ears
 		case 31598:	// C_Forest_Guide
 		case 31624:	// C_HeartOfCat_TW
+		case 400074:	// C_Disapear_Time_TW
 			// top + mid
 		case 19574:	// C_Lord_of_Death
 		case 19578:	// C_Goggle
@@ -885,6 +886,8 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 		case 31673:	// C_Picnic_Basket
 		case 31688:	// C_Poring_On_Shoulder
 		case 31699:	// C_Smiling_Eyes
+		case 410199:	// C_Midnight_Candle
+		case 31851:	// C_Floating_Shield
 			// mid + low
 		case 19554:	// C_Hahoe_Mask
 		case 19563:	// C_Dragon_Arhat_Mask
@@ -1112,7 +1115,9 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			1000222, 310191,	// GuillotineCrossStone_Top2	GuillotineCross_Top2
 			1000297, 310258,	// RuneknightStone_Top2	Runeknight_Top2
 			1000301, 310262,	// GeneticStone_Top2	Genetic_Top2
-			1000305, 310266;	// WanderMinsStone_Top2	WandMinst_Top2
+			1000305, 310266,	// WanderMinsStone_Top2	WandMinst_Top2
+			1000672, 311011,	// SorcererStone_Top3	Sorcerer_Top3
+			1000669, 311008;	// GeneticStone_Top3	Genetic_Top3
 		break;
 	case 1:
 		if (!(.@location & EQP_COSTUME_HEAD_MID)) {
@@ -1174,7 +1179,9 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			1000223, 310190,	// GuillotineCrossStone_Middle2	GuillotineCross_Middle2
 			1000298, 310259,	// RuneknightStone_Middle2	Runeknight_Middle2
 			1000302, 310263,	// GeneticStone_Middle2	Genetic_Middle2
-			1000306, 310267;	// WanderMinsStone_Middle2	WandMinst_Mid2
+			1000306, 310267,	// WanderMinsStone_Middle2	WandMinst_Mid2
+			1000673, 311012,	// SorcererStone_Middle3	Sorcerer_Middle3
+			1000670, 311009;	// GeneticStone_Middle3	Genetic_Middle3
 		break;
 	case 2:
 		if (!(.@location & EQP_COSTUME_HEAD_LOW)) {
@@ -1239,7 +1246,9 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 			1000224, 310189,	// GuillotineCrossStone_Bottom2	GuillotineCross_Bottom2
 			1000299, 310260,	// RuneknightStone_Bottom2	Runeknight_Bottom2
 			1000303, 310264,	// GeneticStone_Bottom2	Genetic_Bottom2
-			1000307, 310268;	// WanderMinsStone_Bottom2	WandMinst_Bot2
+			1000307, 310268,	// WanderMinsStone_Bottom2	WandMinst_Bot2
+			1000674, 311013,	// SorcererStone_Bottom3	Sorcerer_Bottom3
+			1000671, 311010;	// GeneticStone_Bottom3	Genetic_Bottom3
 		break;
 	default:
 		mes "[Aver De Dosh]";
@@ -1294,7 +1303,7 @@ mal_in01,22,113,3	script	Aver De Dosh#cos_ect	4_WHITETIGER,{
 		close;
 
 	delequip .@part;
-	if (rand(1,100) < 51) {
+	if (rand(1,100) < 99) {
 		mes "[Aver De Dosh]";
 		mes "Wow... Elegance!!";
 		mes "This is perfect... Wow!";
@@ -1363,6 +1372,8 @@ mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
 	case 20763:	// C_Amistr_Bag
 	case 20764:	// C_Fallen_Angel_Wing
 	case 20765:	// C_Archangel_Wing
+	case 20534:	// C_GiantCatBag_JP
+	case 20535:	// C_Digital_Space
 		break;
 	default:
 		mes "[Lace La Zard]";
@@ -1453,7 +1464,7 @@ mal_in01,20,107,3	script	Lace La Zard#cos_ect	4_FROG,{
 
 	delitem .@id, 1;
 	delequip .@part;
-	if (rand(100) < 50) {
+	if (rand(100) < 99) {
 		mes "[Lace La Zard]";
 		mes "Beautiful!!";
 		mes "Did I really made this myself?!!!";

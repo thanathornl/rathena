@@ -1,0 +1,49 @@
+-	script	vip_storage	 -1,{
+    OnInit:
+        bindatcmd "storage1",strnpcinfo(3)+"::OnAtcommand";
+        end;    
+
+    OnAtcommand:
+        openstorage2(1,STOR_MODE_GET|STOR_MODE_PUT);
+        end;
+}
+
+-	script	storage2	 -1,{
+    OnInit:
+        bindatcmd "storage2",strnpcinfo(3)+"::OnAtcommand";
+        end;    
+
+    OnAtcommand:
+        openstorage2(2,STOR_MODE_GET|STOR_MODE_PUT);
+        end;
+}
+
+-	script	storage3	 -1,{
+    OnInit:
+        bindatcmd "storage3",strnpcinfo(3)+"::OnAtcommand";
+        end;    
+
+    OnAtcommand:
+        openstorage2(3,STOR_MODE_GET|STOR_MODE_PUT);
+        end;
+}
+
+-	script	storage4	 -1,{
+    OnInit:
+        bindatcmd "storage4",strnpcinfo(3)+"::OnAtcommand";
+        end;    
+
+    OnAtcommand:
+        openstorage2(4,STOR_MODE_GET|STOR_MODE_PUT);
+        end;
+}
+
+-	script	storage5	 -1,{
+    OnInit:
+        bindatcmd "storage5",strnpcinfo(3)+"::OnAtcommand";
+        end;    
+
+    OnAtcommand:
+        openstorage2(5,STOR_MODE_GET|STOR_MODE_PUT);
+        end;
+}

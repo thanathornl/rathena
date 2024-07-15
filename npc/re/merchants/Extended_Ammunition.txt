@@ -451,3 +451,9 @@ que_ng,180,79,3	duplicate(#over_bullet)	Ammunition Merchant#over_bullet_25	4_F_G
 //===========================================================
 
 job_gun,220,138,5	duplicate(#over_bullet)	Ammunition Merchant#over_bullet_26	4_F_GUNSLINGER
+
+skycity,165,223,4	duplicate(#over_arrow)	Arrow Merchant#over_arrow_27	10515
+skycity,168,223,4	duplicate(#over_bullet)	Ammunition Merchant#over_bullet_27	10516
+skycity,171,223,4	duplicate(#over_kunai)	Ninja Tool Merchant#over_kunai_27	10517
+skycity,174,223,4	duplicate(#over_madogear)	Mado Gear Merchant#over_madogear_27	10518
+skycity,177,223,4	duplicate(#over_talisman)	Talisman Merchant#over_talisman_27	10519

@@ -46,7 +46,7 @@ job3_rune01,88,62,5	script	Dragon Breeder	105,{
 	mes "Only Rune Knights can rent a Dragon.";
 	close;
 }
-
+skycity,125,223,5	duplicate(Dragon Breeder)	Dragon Breeder#skycity	105
 // Dragon/Gryphon Master :: dragon
 //============================================================
 prontera,130,213,5	script	Riding Creature Master	105,{
@@ -116,7 +116,7 @@ payon,166,102,5	duplicate(Riding Creature Master)	Riding Creature Master#3	105
 aldebaran,133,109,5	duplicate(Riding Creature Master)	Riding Creature Master#4	105
 yuno,171,187,3	duplicate(Riding Creature Master)	Riding Creature Master#5	105
 rachel,106,130,5	duplicate(Riding Creature Master)	Riding Creature Master#6	105
-
+skycity,134,223,5	duplicate(Riding Creature Master)	Riding Creature Master#7	105
 // Peco removing NPC :: dragon
 //============================================================
 prontera,125,208,5	script	Peco Peco Remover	105,{
@@ -147,6 +147,7 @@ prontera,125,208,5	script	Peco Peco Remover	105,{
 	}
 	close;
 }
+skycity,131,223,5	duplicate(Peco Peco Remover)	Peco Peco Remover#2	105
 
 // Mado Gear Renter :: madogear
 //============================================================
@@ -186,7 +187,7 @@ prontera,125,208,5	script	Peco Peco Remover	105,{
 				mes "Please remove your cash mount.";
 				close;
 			}
-			setmadogear;
+			setmadogear true,MADO_SUIT;
 			mes "[Mado Gear Armorer]";
 			mes "Have fun, and please come again!";
 			close;
@@ -272,3 +273,4 @@ dicastes01,187,207,3	duplicate(mgm)	Mado Gear Armorer#dic	105
 manuk,273,212,5	duplicate(mgm)	Mado Gear Armorer#man	105
 splendide,180,174,5	duplicate(mgm)	Mado Gear Armorer#spl	105
 mid_camp,242,243,3	duplicate(mgm)	Mado Gear Armorer#mid	105
+skycity,128,223,5	duplicate(mgm)	Mado Gear Armorer#skycity	105

@@ -119,3 +119,4 @@ alde_alche,31,186,3	script	Craft Book Merchant#alde	883,{
 	mes "before you make your decision.";
 	close;
 }
+skycity,122,218,6	duplicate(Craft Book Merchant#alde) Craft Book Merchant#skycity 883

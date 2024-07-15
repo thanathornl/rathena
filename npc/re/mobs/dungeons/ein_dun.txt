@@ -69,7 +69,7 @@ OnMobDead:
 	if (playerattached()) {
 		if (.count < 2500)
 			.count++;
-		if (!.boss_spawn && !.cooldown && .count == 2500) {
+		if (!.boss_spawn && !.cooldown && .count == 250) {
 			.boss_spawn = true;
 			.count = 0;
 			killmonster "ein_d02_i", "ein_d02_i_boss::OnBossDeath";

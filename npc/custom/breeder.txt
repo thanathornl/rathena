@@ -37,3 +37,6 @@ prontera,124,201,1	script	Universal Rental NPC	726,{
 	specialeffect2 EF_TEIHIT3;
 	end;
 }
+
+skycity,122,223,5	duplicate(Universal Rental NPC)	Universal Rental NPC2	726
+

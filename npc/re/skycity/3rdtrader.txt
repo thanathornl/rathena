@@ -1,0 +1,38 @@
+skycity,180,223,4	script	3rd Class Trader	10509,{
+	menu "Poison Herb",Poison_Herb,"Rune Stone",Rune_Stone,"Rare Herb",Rare_Herb,"Sorcerrer Items",Sorcerrer_Items,"Warlock Books",Warlock_Books,"Shadow Chaser",Shadow_Chaser;
+	Poison_Herb:
+	callshop "Poison_Herb_Shop", 1;
+	end;
+	
+	Rune_Stone:
+	callshop "Rune_Stone_Shop", 1;
+	end;
+	
+	Rare_Herb:
+	callshop "Rare_Herb_Shop" ,1;
+	end;
+	
+	Sorcerrer_Items:
+	callshop "Sorcerrer_Items_Shop", 1;
+	end;
+	
+	Warlock_Books:
+	callshop "Warlock_Books_Shop", 1;
+	end;
+	
+	Shadow_Chaser:
+	callshop "Shadow_Chaser_Shop", 1;
+	end;
+}
+
+-	shop	Poison_Herb_Shop	-1,7932:4000,7933:4000,7934:4000,7935:4000,7936:4000,7937:4000,7931:5000
+
+-	shop	Rune_Stone_Shop	-1,12737:1000,12734:2500,12738:7500,12735:18000,12736:50000,7939:20000,7938:10000
+
+-	shop	Rare_Herb_Shop	-1,702:10000,621:10000,631:10000,749:10000,605:10000,703:10000
+
+-	shop	Sorcerrer_Items_Shop	-1,6360:200,6363:200,6361:200,6362:200,990:-1,991:-1,992:-1,993:-1,994:-1,995:-1,996:-1,997:-1,1000291:-1,1000292:-1,1000293:-1,1000294:-1,1000295:-1
+
+-	shop	Warlock_Books_Shop	-1,100068:1000000,100071:1000000,100069:1000000,100072:1000000,100070:1000000,100073:1000000,100074:1000000,100066:1000000,100067:1000000,100065:1000000
+
+-	shop	Shadow_Chaser_Shop	-1,6120:-1,6122:-1,6123:-1
